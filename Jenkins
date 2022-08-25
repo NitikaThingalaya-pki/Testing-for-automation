@@ -3,3 +3,5 @@ echo 'heelloooo sucessss'
 echo 'heelloooo testinggggg'
 
 echo 'heelloooo sucessss'
+
+archiveArtifacts artifacts: '.zip', followSymlinks: false, onlyIfSuccessful: true

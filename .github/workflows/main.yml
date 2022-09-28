@@ -47,7 +47,7 @@ jobs:
         run: msbuild C-Sharp-master\C-Sharp.sln
         
       - name: Test with the dotnet CLI
-        run: dotnet test --logger trx --results-directory "TestResults"
+        run: dotnet test
         
       - name: Upload dotnet test results
         uses: actions/upload-artifact@v3

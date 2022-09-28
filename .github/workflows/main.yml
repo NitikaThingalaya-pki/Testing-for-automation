@@ -45,3 +45,14 @@ jobs:
         
       - name: Build the Solution
         run: msbuild C-Sharp-master\C-Sharp.sln
+        
+      - name: Test with the dotnet CLI
+        run: dotnet test --logger trx --results-directory "TestResults"
+        
+      - name: Upload dotnet test results
+        uses: actions/upload-artifact@v3
+        with:
+            name: dotnet-results
+            path: TestResults
+          # Use always() to always run this step to publish test results when there are test failures
+        if: ${{ always() }}

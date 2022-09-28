@@ -30,6 +30,8 @@ jobs:
         
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v2.1.1
+        with:
+          dotnet-version: '4.8.1'
         
       - name: Setup NuGet.exe for use with actions
         # You may pin to the exact commit or the version.

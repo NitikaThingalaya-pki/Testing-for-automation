@@ -45,8 +45,22 @@ jobs:
         
       - name: Build the Solution
         run: msbuild C-Sharp-master\C-Sharp.sln
+        
+      - name: Upload packages artifact
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Packages
+          path: artifacts/Packages
+
+      - name: Upload logs artifact
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: Logs
+          path: artifacts/Logs
               
-      - name: Create the package
-        run: dotnet pack --configuration Release C-Sharp-master
-      - name: Publish the package to GPR
-        run: dotnet nuget push C-Sharp-master/bin/Release/*.nupkg
+      #- name: Create the package
+        #run: dotnet pack --configuration Release C-Sharp-master
+      #- name: Publish the package to GPR
+        #run: dotnet nuget push C-Sharp-master/bin/Release/*.nupkg

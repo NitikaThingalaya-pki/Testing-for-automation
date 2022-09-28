@@ -42,6 +42,6 @@ jobs:
       - name: Build the Solution
         run: msbuild BugGuardian.MVC-master\BugGuardian.MVC.sln /p:Configuration=$env:Configuration /p:platform=$env:Platform
         env:
-          Platform: Debug
-          Configuration: "Any CPU"     
+          Platform: ""
+          Configuration: ""     
         

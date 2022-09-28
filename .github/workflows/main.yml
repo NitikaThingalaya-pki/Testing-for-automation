@@ -50,7 +50,7 @@ jobs:
         id: zip_hash
         run: |
           $Parameters = @{
-              Path     = "Testing-for-automation\Testing-for-automation\C-Sharp-master\Utilities.Tests\bin\Debug"
+              Path     = "Testing-for-automation\Testing-for-automation\C-Sharp-master\Utilities\obj\Debug\net5.0"
               NewName  = "Testing"
               PassThru = $true
           }

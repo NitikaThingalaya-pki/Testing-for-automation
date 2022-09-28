@@ -45,11 +45,22 @@ jobs:
         
       - name: Build the Solution
         run: msbuild C-Sharp-master\C-Sharp.sln
-                
-      - name: Upload dotnet test results
-        uses: actions/upload-artifact@v3
-        with:
-            name: dotnet-results
-            path: C-Sharp-master/MSBuild/
-          # Use always() to always run this step to publish test results when there are test failures
-        if: ${{ always() }}
+              
+      - name: Compressing folder
+        id: zip_hash
+        run: |
+          $Parameters = @{
+              Path     = "Testing-for-automation\Testing-for-automation\C-Sharp-master\Utilities.Tests\bin\Debug"
+              NewName  = "Testing"
+              PassThru = $true
+          }
+          $Build_Directory = (Rename-Item @Parameters).FullName
+          $Parameters = @{
+            Path             = $Build_Directory
+            DestinationPath  = "testing.zip"
+            CompressionLevel = "Optimal"
+          }
+          Compress-Archive @Parameters
+          $zip_hash = (Get-FileHash -Path testing.zip -Algorithm SHA256).Hash
+          Write-Host -Object "testing.zip SHA256 hash: $((Get-FileHash -Path testing.zip -Algorithm SHA256).Hash)"
+          echo "::set-output name=zip_hash::$zip_hash"

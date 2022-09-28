@@ -47,6 +47,6 @@ jobs:
         run: msbuild C-Sharp-master\C-Sharp.sln
               
       - name: Create the package
-        run: dotnet pack --configuration Release Testing-for-automation/C-Sharp-master
+        run: dotnet pack --configuration Release C-Sharp-master
       - name: Publish the package to GPR
-        run: dotnet nuget push Testing-for-automation/C-Sharp-master/bin/Release/*.nupkg
+        run: dotnet nuget push C-Sharp-master/bin/Release/*.nupkg

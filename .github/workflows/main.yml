@@ -61,6 +61,13 @@ jobs:
               CompressionLevel = "Optimal"
           }
           
+                    
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v3
+        with:
+           name: BuildResult.zip
+           path: C-Sharp-master
+           
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with: 

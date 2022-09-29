@@ -65,7 +65,7 @@ jobs:
         uses: actions/download-artifact@v3
         with: 
               name: BuildResult.zip
-              path: Testing-for-automation/C-Sharp-master
+              path: C-Sharp-master
 
               
       #- name: Create the package

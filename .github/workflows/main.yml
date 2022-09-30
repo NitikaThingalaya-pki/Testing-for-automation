@@ -73,6 +73,14 @@ jobs:
         with: 
               name: BuildResult.zip
               path: C-Sharp-master
+              
+      - name: Veracode Upload And Scan
+        uses: veracode/veracode-uploadandscan-action@0.2.1
+        with:
+          appname: 'C-Sharp-master'
+          createprofile: false
+          filepath: 'C-Sharp-master/BuildResult.zip'
+          sandboxname: 'Odin2_sandbox'
 
               
       #- name: Create the package

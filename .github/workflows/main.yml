@@ -92,8 +92,8 @@ jobs:
        
       - name: Commit files
         run: |
-          git config  user.email "Nitika.Thingalaya@PerkinElmer.com"
-          git config user.name "NitikaThingalaya-pki"
+          git config --local user.email "Nitika.Thingalaya@PerkinElmer.com"
+          git config --local user.name "NitikaThingalaya-pki"
           git commit -m "Test" -a
           
       - name: Push changes
@@ -104,4 +104,3 @@ jobs:
           branch: 'test1'
           directory: 'C-Sharp-master/BuildResult'
           force_with_lease: true
-          github_url: git@github.com

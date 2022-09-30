@@ -99,7 +99,7 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: $\{{ secrets.GITHUB_TOKEN }}
+          github_token: AUTOMATION
           repository: ''
           branch: 'test1'
           directory: 'C-Sharp-master/BuildResult'

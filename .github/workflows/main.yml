@@ -92,6 +92,6 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: $\{{ secrets.GITHUB_TOKEN }}
-          repository: Testing-for-automation/C-Sharp-master
-          branch: test1
-          directory: BuildResult
+          repository: ''
+          branch: 'test1'
+          directory: 'C-Sharp-master/BuildResult'

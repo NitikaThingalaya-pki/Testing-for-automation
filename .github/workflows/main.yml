@@ -100,7 +100,7 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ github.token }}
-          repository: ''
+          repository: 'https://github.com/NitikaThingalaya-pki/Testing-for-automation.git'
           branch: 'test1'
           directory: 'C-Sharp-master/BuildResult'
           force_with_lease: true

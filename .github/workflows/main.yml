@@ -84,8 +84,8 @@ jobs:
        
       - name: Commit files
         run: |
-          git config --local user.email "Nitika.Thingalaya@PerkinElmer.com"
-          git config --local user.name "NitikaThingalaya-pki"
+          git config  user.email "Nitika.Thingalaya@PerkinElmer.com"
+          git config user.name "NitikaThingalaya-pki"
           git commit -m "Test" -a
           
       - name: Push changes

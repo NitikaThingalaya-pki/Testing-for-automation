@@ -102,5 +102,5 @@ jobs:
           github_token: ${{ github.token }}
           repository: ''
           branch: 'test1'
-          directory: 'git@github.com:NitikaThingalaya-pki/Testing-for-automation/C-Sharp-master/BuildResult'
+          directory: '.C-Sharp-master/BuildResult'
           force_with_lease: true

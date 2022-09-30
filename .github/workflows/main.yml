@@ -82,15 +82,16 @@ jobs:
               name: BuildResult.zip
               path: C-Sharp-master
        
-      - name: Pushes test file
-        uses: ad-m/github-push-action@v0.6.0
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      - name: Commit files
+        run: |
+          git config --local user.email "Nitika.Thingalaya@PerkinElmer.com"
+          git config --local user.name "NitikaThingalaya-pki"
+          git commit -m "Test" -a
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
-          source_file: 'BuildResult.zip'
-          #destination_branch:'test1'
-          destination_repo: 'C-Sharp-master/BuildResult'
-          destination_folder: 'BuildResult'
-          user_email: 'Nitika.Thingalaya@Perkinelmer.com'
-          user_name: 'NitikaThingalaya-pki'
-          commit_message: 'test'
+          github_token: $\{{ secrets.GITHUB_TOKEN }}
+          repository: Testing-for-automation/C-Sharp-master
+          branch: test1
+          directory: BuildResult

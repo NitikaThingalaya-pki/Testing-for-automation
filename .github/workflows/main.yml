@@ -103,3 +103,4 @@ jobs:
           repository: ''
           branch: 'test1'
           directory: 'C-Sharp-master/BuildResult'
+          force_with_lease: true

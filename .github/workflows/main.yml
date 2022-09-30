@@ -74,15 +74,14 @@ jobs:
               name: BuildResult.zip
               path: C-Sharp-master
               
+  Run-veracode-on-Ubuntu:
+    name: Run npm on Ubuntu
+    runs-on: ubuntu-latest
+    steps:       
       - name: Veracode Upload And Scan
         # You may pin to the exact commit or the version.
         # uses: veracode/veracode-uploadandscan-action@35794dab9fbcd28fac19e44963f80646b27f4a7f
         uses: veracode/veracode-uploadandscan-action@0.2.4
         with:
-              filepath: C-Sharp-master
+              filepath: C-Sharp-master/BuildResult.zip
               sandboxname: Odin2_sandbox
-         
-      #- name: Create the package
-        #run: dotnet pack --configuration Release C-Sharp-master
-      #- name: Publish the package to GPR
-        #run: dotnet nuget push C-Sharp-master/bin/Release/*.nupkg

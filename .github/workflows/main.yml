@@ -102,5 +102,5 @@ jobs:
           github_token: ${{ github.token }}
           repository: ''
           branch: 'test1'
-          directory: '.C-Sharp-master/BuildResult'
+          directory: 'C-Sharp-master/BuildResult'
           force_with_lease: true

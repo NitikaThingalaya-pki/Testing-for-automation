@@ -97,7 +97,10 @@ jobs:
           git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
           git config --global user.name "NitikaThingalaya-pki"
           git remote set-url --push origin https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
+          git branch -m test1
+          git add -A
           git commit -m "Test" -a
+          git push
           
       - name: Push changes
         uses: ad-m/github-push-action@master

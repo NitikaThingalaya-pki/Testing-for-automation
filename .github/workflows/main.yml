@@ -92,24 +92,19 @@ jobs:
               name: BuildResult.zip
               path: C-Sharp-master
        
-      - name: Download multiple workflow artifacts
-        # You may pin to the exact commit or the version.
-        # uses: marcofaggian/action-download-multiple-artifacts@6985d930e1da462e36b75e334cd707ddcab9bfcd
-        uses: marcofaggian/action-download-multiple-artifacts@v3.0.7
-        with:
-              # GitHub token
-              github_token: ${{github.token}}
-              # Workflow name
-              workflow: main.yml
-              # Repository name with owner (like actions/checkout)
-              repo: ${{github.repository}}
-              # Branch name
-              branch: test1
-              # Event type
-              event: push
-              # Artifact name (download all artifacts in not specified)
-              names: BuildResult.zip
-              # Where to unpack the artifact
-              paths: /C-Sharp-master/BuildResult
+      - name: Commit files
+        run: |
+          git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
+          git config --global user.name "NitikaThingalaya-pki"
+          git remote set-url --push origin https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
+          #git pull --rebase --autostash origin test1
+          git reset --hard
+          #git init
+          git branch -m test1
+          git add -A
+          git commit -m "Test" -a
+          git push origin HEAD:test1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   

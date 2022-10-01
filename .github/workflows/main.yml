@@ -82,6 +82,7 @@ jobs:
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+          github_token: ${{ secrets.GITHUB_TOKEN }}
     
      
       - name: Download a single artifact
@@ -92,8 +93,8 @@ jobs:
        
       - name: Commit files
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --local user.email "Nitika.Thingalaya@Perkinelmer.com"
+          git config --local user.name "NitikaThingalaya-pki"
           git commit -m "Test" -a
           
       - name: Push changes

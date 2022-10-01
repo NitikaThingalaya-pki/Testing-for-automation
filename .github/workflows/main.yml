@@ -78,12 +78,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
           fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-    
+          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
      
       - name: Download a single artifact
         uses: actions/download-artifact@v3
@@ -95,6 +96,7 @@ jobs:
         run: |
           git config --local user.email "Nitika.Thingalaya@Perkinelmer.com"
           git config --local user.name "NitikaThingalaya-pki"
+          git remote set-url --push origin https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/Testing-for-automation.git
           git commit -m "Test" -a
           
       - name: Push changes

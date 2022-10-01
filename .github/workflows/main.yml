@@ -96,22 +96,15 @@ jobs:
         run: |
           git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
           git config --global user.name "NitikaThingalaya-pki"
-          #git remote set-url --push origin https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
+          git remote set-url --push origin https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
           #git pull --rebase --autostash origin test1
-          #git reset --hard
-          #git init
-          #git branch -m test1
-          #git add -A
+          git reset --hard
+          git init
+          git branch -m test1
+          git add -A
           git commit -m "Test" -a
-          #git push origin HEAD:test1
+          git push origin HEAD:test1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          repository: 'https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git'
-          branch: 'test1'
-          directory: 'C-Sharp-master/BuildResult'
-          force_with_lease: true
+

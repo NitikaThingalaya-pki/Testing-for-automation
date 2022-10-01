@@ -98,12 +98,12 @@ jobs:
           git config --global user.name "NitikaThingalaya-pki"
           git remote set-url --push origin https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
           #git pull --rebase --autostash origin test1
-          git reset --hard
-          git init
+          #git reset --hard
+          #git init
           git branch -m test1
           git add -A
           git commit -m "Test" -a
-          git push origin HEAD:test1
+          #git push origin HEAD:test1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           

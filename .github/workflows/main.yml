@@ -100,6 +100,7 @@ jobs:
           git branch -m test1
           git add -A
           git commit -m "Test" -a
+          git pull --rebase origin test1
           git push origin HEAD:test1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

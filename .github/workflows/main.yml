@@ -94,9 +94,9 @@ jobs:
        
       - name: Commit files
         run: |
-          git config --local user.email "Nitika.Thingalaya@Perkinelmer.com"
-          git config --local user.name "NitikaThingalaya-pki"
-          git set-url --push origin https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/Testing-for-automation.git
+          git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
+          git config --global user.name "NitikaThingalaya-pki"
+          git set-url remote --push origin https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/Testing-for-automation.git
           git commit -m "Test" -a
           
       - name: Push changes

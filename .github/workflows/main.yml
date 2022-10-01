@@ -104,4 +104,4 @@ jobs:
           # Artifact name (download all artifacts in not specified)
           name: BuildResult.zip
           # Artifact unpack location
-          path: C-Sharp-master/BuildResult
+          path: /C-Sharp-master/BuildResult

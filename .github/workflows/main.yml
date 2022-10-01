@@ -92,28 +92,16 @@ jobs:
               name: BuildResult.zip
               path: C-Sharp-master
        
-      - name: Commit files
-        run: |
-          git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
-          git config --global user.name "NitikaThingalaya-pki"
-          #git remote set-url --push origin https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
-          #git pull --rebase --autostash origin test1
-          #git reset --hard
-          #git init
-          #git branch -m test1
-          #git add -A
-          git commit -m "Test" -a
-          #git push origin HEAD:test1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - name: Download artifact
+        # You may pin to the exact commit or the version.
+        # uses: aochmann/actions-download-artifact@5709392f11b5937bd316e52687ad87f7deced5f5
+        uses: aochmann/actions-download-artifact@1.0.4
         with:
-          #github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: 'test1'
-          force_with_lease: true
-          directory: 'C-Sharp-master/BuildResult'
-          #repository: ''
-          
-
+          # GitHub token
+          github_token: ${{github.token}}
+          # Repository name with owner
+          repo: ${{github.repository}}
+          # Artifact name (download all artifacts in not specified)
+          name: BuildResult.zip
+          # Artifact unpack location
+          path: C-Sharp-master/BuildResult

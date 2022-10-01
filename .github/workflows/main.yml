@@ -92,16 +92,24 @@ jobs:
               name: BuildResult.zip
               path: C-Sharp-master
        
-      - name: Download artifact
+      - name: Download multiple workflow artifacts
         # You may pin to the exact commit or the version.
-        # uses: aochmann/actions-download-artifact@5709392f11b5937bd316e52687ad87f7deced5f5
-        uses: aochmann/actions-download-artifact@1.0.4
+        # uses: marcofaggian/action-download-multiple-artifacts@6985d930e1da462e36b75e334cd707ddcab9bfcd
+        uses: marcofaggian/action-download-multiple-artifacts@v3.0.7
         with:
-          # GitHub token
-          github_token: ${{github.token}}
-          # Repository name with owner
-          repo: ${{github.repository}}
-          # Artifact name (download all artifacts in not specified)
-          name: BuildResult.zip
-          # Artifact unpack location
-          path: /C-Sharp-master/BuildResult
+              # GitHub token
+              github_token: ${{github.token}}
+              # Workflow name
+              workflow: main.yml
+              # Repository name with owner (like actions/checkout)
+              repo: ${{github.repository}}
+              # Branch name
+              branch: test1
+              # Event type
+              event: push
+              # Artifact name (download all artifacts in not specified)
+              names: BuildResult.zip
+              # Where to unpack the artifact
+              paths: /C-Sharp-master/BuildResult
+
+  

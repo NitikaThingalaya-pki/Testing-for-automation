@@ -64,10 +64,11 @@ jobs:
               CompressionLevel = "Optimal"
           }
           git add .
-          git commit -m "Test" -a
+          #git commit -m "Test" -a
           git push origin HEAD:test1
-          git config --local user.email "Nitika.Thingalaya@Perkinelmer.com"
-          git config --local user.name "NitikaThingalaya-pki"
+          git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
+          git config --global user.name "NitikaThingalaya-pki"
+          GIT_AUTHOR_EMAIL="Nitika.Thingalaya@Perkinelmer.com" && GIT_AUTHOR_NAME="NitikaThingalaya-pki" && git commit
           git remote set-url --push origin test1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  

@@ -81,7 +81,7 @@ jobs:
       
       - name: Command Line Script
         run: |
-            cd repos/NitikaThingalaya-pki/Testing-for-automation/actions/artifacts
+            cd C-Sharp-master\Utilities\bin\Debug\net5.0
 
             git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
 

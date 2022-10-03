@@ -63,12 +63,9 @@ jobs:
               DestinationPath  = "BuildResult.zip"
               CompressionLevel = "Optimal"
           }
-          git remote add origin https://NitikaThingalaya-pki:${GITHUB_TOKEN}@github.com/NitikaThingalaya-pki/Testing-for-automation.git
-          git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
-          git config --global user.name "NitikaThingalaya-pki"
-          git add BuildResult.zip
-          git commit -m 'adding a file'
-          git push origin main
+          git add --all
+          git commit -m "Added workflow for master"
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
          

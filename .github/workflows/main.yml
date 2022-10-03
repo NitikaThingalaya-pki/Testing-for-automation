@@ -81,7 +81,7 @@ jobs:
       
       - name: Command Line Script
         run: |
-            cd $(System.ArtifactsDirectory)\zipfolder
+            cd repos/NitikaThingalaya-pki/Testing-for-automation/actions/artifacts
 
             git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
 

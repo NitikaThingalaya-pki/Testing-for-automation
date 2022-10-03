@@ -63,17 +63,28 @@ jobs:
               DestinationPath  = "BuildResult.zip"
               CompressionLevel = "Optimal"
           }
-          
+         
+      - name: Commit files
+        run: |
+          git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
+          git config --global user.name "NitikaThingalaya-pki"
+          git remote set-url --push origin https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
+          git pull --rebase --autostash origin test1
+          #git reset --hard
+          #git init
+          git branch -m test1
+          git add BuildResult.zip
+          git commit -m "Test" -a
+          git push origin HEAD:test1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
                     
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v3
         with:
            name: BuildResult.zip
            path: C-Sharp-master
-           env-url: FOOBAR
-      
-      - name: Use URL for something
-        run: echo "${{ env.FOOBAR }}"
+
      
 
 

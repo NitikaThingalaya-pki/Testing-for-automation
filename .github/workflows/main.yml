@@ -63,11 +63,11 @@ jobs:
               DestinationPath  = "BuildResult.zip"
               CompressionLevel = "Optimal"
           }
-          git add $Build_DirectoryBuildResult.zip
+          git add .
           git commit -m "Test" -a
           git push origin HEAD:test1
-          git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
-          git config --global user.name "NitikaThingalaya-pki"
+          git config --remote user.email "Nitika.Thingalaya@Perkinelmer.com"
+          git config --remote user.name "NitikaThingalaya-pki"
           #git remote set-url --push origin https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  

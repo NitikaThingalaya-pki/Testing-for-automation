@@ -63,6 +63,8 @@ jobs:
               DestinationPath  = "BuildResult.zip"
               CompressionLevel = "Optimal"
           }
+          git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
+          git config --global user.name "NitikaThingalaya-pki"
           git add --all
           git commit -m "Added workflow for master"
           git push

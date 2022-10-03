@@ -81,7 +81,7 @@ jobs:
       
       - name: Command Line Script
         run: |
-            cd C-Sharp-master\Utilities\bin\Debug\net5.0
+            cd C-Sharp-master\Utilities.Tests\bin\Debug\net5.0
 
             git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
 

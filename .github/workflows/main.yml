@@ -68,7 +68,7 @@ jobs:
           git push origin HEAD:test1
           git config --local user.email "Nitika.Thingalaya@Perkinelmer.com"
           git config --local user.name "NitikaThingalaya-pki"
-          git remote set-url --push test1 https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
+          git remote set-url --push origin test1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
          

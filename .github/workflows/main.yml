@@ -27,6 +27,8 @@ jobs:
         with: 
               persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
               fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: setup-msbuild
         uses: microsoft/setup-msbuild@v1.1
@@ -62,23 +64,38 @@ jobs:
               Path             = $Build_Directory
               DestinationPath  = "BuildResult.zip"
               CompressionLevel = "Optimal"
-          }
-          git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
-          git config --global user.name "NitikaThingalaya-pki"
-          git add --all
-          git commit -m "Added workflow for master"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
-         
+          }    
                      
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v3
         with:
            name: BuildResult.zip
            path: C-Sharp-master
+           
+      - name: Download a single artifact
+        uses: actions/download-artifact@v3
+        with: 
+              name: BuildResult.zip
+              path: C-Sharp-master
 
-     
+      - uses: CmdLine@2
+        name: Command Line Script
+        with:
+          script: >-
+            cd $(System.ArtifactsDirectory)\zipfolder
 
+            git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
 
-  
+            git config --global user.name "NitikaThingalaya-pki"
+
+            git init
+
+            git add .
+
+            git commit -m "test"
+
+            git remote add origin https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
+
+            git push https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

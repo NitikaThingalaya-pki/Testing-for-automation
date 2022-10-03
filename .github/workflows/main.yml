@@ -78,24 +78,4 @@ jobs:
               name: BuildResult.zip
               path: C-Sharp-master
 
-      - uses: CmdLine@2
-        name: Command Line Script
-        with:
-          script: >-
-            cd $(System.ArtifactsDirectory)\zipfolder
-
-            git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
-
-            git config --global user.name "NitikaThingalaya-pki"
-
-            git init
-
-            git add .
-
-            git commit -m "test"
-
-            git remote add origin https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
-
-            git push https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      

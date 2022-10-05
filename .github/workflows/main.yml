@@ -81,25 +81,6 @@ jobs:
         uses: actions/download-artifact@v3
         with: 
               name: BuildResult.zip
-              path: C-Sharp-master
+              path: NitikaThingalaya-pki/Testing-for-automation/C-Sharp-master/BuildResult
 
-      - name: Command Line Script
-        run: |
-		cd C-Sharp-master\Utilities.Tests\bin\Debug\net5.0
-
-        	git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
-
-        	git config --global user.name "NitikaThingalaya-pki"
-
-        	git init
-
-        	git add .
-
-        	git commit -m "test"
-
-        	git remote add origin https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
-
-        	git push https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
-
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+   

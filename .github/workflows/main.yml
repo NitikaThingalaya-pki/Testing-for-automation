@@ -107,7 +107,7 @@ jobs:
 
             git init
 		
-	          git branch -m test1
+	    git branch -m test1
 
             git add BuildResilt.zip
 

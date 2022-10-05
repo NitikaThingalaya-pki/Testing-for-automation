@@ -97,5 +97,24 @@ jobs:
               name: BuildResult.zip
               path: C-Sharp-master
 
-      
+      - name: Command Line Script
+        run: |
+            cd C-Sharp-master\Utilities.Tests\bin\Debug\net5.0 
 
+            git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
+
+            git config --global user.name "NitikaThingalaya-pki"
+
+            git init
+		
+	          git branch -m test1
+
+            git add BuildResilt.zip
+
+            git commit -m "test"
+
+            git remote add origin https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
+
+            git push https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation.git
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

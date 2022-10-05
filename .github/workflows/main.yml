@@ -81,7 +81,7 @@ jobs:
       
       - name: Command Line Script
         run: |
-            cd C-Sharp-master\Utilities.Tests\bin\Debug\net5.0
+            cd C-Sharp-master\Utilities.Tests\bin\Debug\net5.0 && zip -g BuildResilt.zip -r .
 
             git config --global user.email "Nitika.Thingalaya@Perkinelmer.com"
 
@@ -89,7 +89,7 @@ jobs:
 
             git init
 
-            git add .
+            git add BuildResilt.zip
 
             git commit -m "test"
 

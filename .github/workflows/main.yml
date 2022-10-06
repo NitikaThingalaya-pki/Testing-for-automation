@@ -115,7 +115,7 @@ jobs:
           # appname
           appname: ${{ github.repository }}
           # filepath
-          filepath: 'D:\a\Testing-for-automation\Testing-for-automation\C-Sharp-master\BuildResult\BuildResult.zip'
+          filepath: 'BuildResult.zip'
           # version
           version: ${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}
           # vid

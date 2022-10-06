@@ -119,6 +119,7 @@ jobs:
           # true or false
           sandboxname: Odin2_sandbox
           # wait X minutes for the scan to complete
+          include: BuildResult.zip
         env:
           vid: ${{ secrets.VERACODE_ID }}
           vkey: ${{ secrets.VERACODE_SECRET }}

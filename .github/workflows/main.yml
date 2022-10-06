@@ -109,7 +109,7 @@ jobs:
           # appname
           appname: ${{ github.repository }}
           # filepath
-          filepath: D:\a\Testing-for-automation\Testing-for-automation\C-Sharp-master\BuildResult
+          filepath: D:\a\Testing-for-automation\Testing-for-automation\C-Sharp-master\BuildResult\BuildResult.zip
           # version
           version: ${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}
           # vid
@@ -119,7 +119,7 @@ jobs:
           # true or false
           sandboxname: Odin2_sandbox
           # wait X minutes for the scan to complete
-          include: BuildResult.zip
+          #include: BuildResult.zip
         env:
           vid: ${{ secrets.VERACODE_ID }}
           vkey: ${{ secrets.VERACODE_SECRET }}

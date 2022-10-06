@@ -81,13 +81,7 @@ jobs:
         uses: actions/download-artifact@v3
         with: 
               name: BuildResult.zip
-              path: https://github.com/NitikaThingalaya-pki/Testing-for-automation/tree/test1/C-Sharp-master/BuildResult
+              path: https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation/tree/test1/C-Sharp-master/BuildResult
+        env:
+          GITHUB_TOKEN: ${{ github.token }} 
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: Add build artifact
-          path: C-Sharp-master/BuildResult
-          title: Add build artifact
-          branch: test1

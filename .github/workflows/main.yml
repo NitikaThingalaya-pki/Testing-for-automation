@@ -81,7 +81,7 @@ jobs:
         uses: actions/download-artifact@v3
         with: 
               name: BuildResult.zip
-              path: https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation/tree/test1/C-Sharp-master/BuildResult
+              #path: https://NitikaThingalaya-pki:$GITHUB_TOKEN@github.com/NitikaThingalaya-pki/Testing-for-automation/tree/test1/C-Sharp-master/BuildResult
         env:
           GITHUB_TOKEN: ${{ github.token }} 
 

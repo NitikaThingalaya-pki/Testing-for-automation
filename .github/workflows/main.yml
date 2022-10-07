@@ -112,7 +112,7 @@ jobs:
         #uses: veracode/veracode-uploadandscan-action@35794dab9fbcd28fac19e44963f80646b27f4a7f
         #uses: veracode/veracode-uploadandscan-action@0.2.4
         run:
-            java -jar vosp-api-wrapper-java-22.9.10.3.jar -action uploadandscan -vid $vid -vkey $vkey -appname ${{ github.repository }} -teams Diagnostics -sandboxname Odin2_sandbox -version ${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }} -filepath D:/a/Testing-for-automation/Testing-for-automation/C-Sharp-master/BuildResult/BuildResult.zip
+            VeracodeC#API -action uploadandscan -vid $vid -vkey $vkey -appname ${{ github.repository }} -teams Diagnostics -sandboxname Odin2_sandbox -version ${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }} -filepath D:/a/Testing-for-automation/Testing-for-automation/C-Sharp-master/BuildResult/BuildResult.zip
         env:
           vid: ${{ secrets.VERACODE_ID }}
           vkey: ${{ secrets.VERACODE_SECRET }}

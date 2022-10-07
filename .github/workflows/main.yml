@@ -113,15 +113,15 @@ jobs:
         uses: veracode/veracode-uploadandscan-action@0.2.4
         with:
           # appname
-          appname: ${{ github.repository }}
+          appname: '${{ github.repository }}'
           # filepath
           filepath: '**\*.zip'
           # version
-          version: ${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}
+          version: '${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}'
           # vid
-          vid: $vid
+          vid: '$vid'
           # vkey
-          vkey: $vkey
+          vkey: '$vkey'
           # true or false
           sandboxname: 'Odin2_sandbox'
           # wait X minutes for the scan to complete

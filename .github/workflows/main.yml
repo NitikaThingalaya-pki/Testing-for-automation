@@ -132,7 +132,7 @@ jobs:
           # automatically delete the current scan if there are any errors when uploading files or starting the scan
           deleteincompletescan: false
           # specify version of the Java API Wrapper; default is latest
-          #javawrapperversion: "v22.9.10.3"
+          #javawrapperversion: "v22.6.10.2"
         env:
           vid: ${{ secrets.VERACODE_ID }}
           vkey: ${{ secrets.VERACODE_SECRET }}

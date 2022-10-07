@@ -130,7 +130,8 @@ jobs:
           teams: "Diagnostics"
           # automatically delete the current scan if there are any errors when uploading files or starting the scan
           deleteincompletescan: false
-          inputfilepath: "D:/a/Testing-for-automation/Testing-for-automation/C-Sharp-master/BuildResult/BuildResult.zip"
+          # specify version of the Java API Wrapper; default is latest
+          javawrapperversion: "v19.7.7.1"
         env:
           vid: ${{ secrets.VERACODE_ID }}
           vkey: ${{ secrets.VERACODE_SECRET }}

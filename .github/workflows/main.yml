@@ -113,19 +113,24 @@ jobs:
         uses: veracode/veracode-uploadandscan-action@0.2.4
         with:
           # appname
-          appname: '${{ github.repository }}'
+          appname: "${{ github.repository }}"
           # filepath
-          filepath: 'D:\a\Testing-for-automation\Testing-for-automation\C-Sharp-master\BuildResult\BuildResult.zip'
+          filepath: "D:/a/Testing-for-automation/Testing-for-automation/C-Sharp-master/BuildResult/BuildResult.zip"
           # version
-          version: '${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}'
+          version: "${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"
           # vid
-          vid: '$vid'
+          vid: "$vid"
           # vkey
-          vkey: '$vkey'
+          vkey: "$vkey"
           # true or false
-          sandboxname: 'Odin2_sandbox'
+          sandboxname: "Odin2_sandbox"
           # wait X minutes for the scan to complete
-          #include: BuildResult.zip
+          include: "*.dll"
+          # teams
+          teams: "Diagnostics"
+          # automatically delete the current scan if there are any errors when uploading files or starting the scan
+          deleteincompletescan: false
+          inputfilepath: "D:/a/Testing-for-automation/Testing-for-automation/C-Sharp-master/BuildResult/BuildResult.zip"
         env:
           vid: ${{ secrets.VERACODE_ID }}
           vkey: ${{ secrets.VERACODE_SECRET }}

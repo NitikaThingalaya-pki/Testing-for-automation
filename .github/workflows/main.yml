@@ -93,7 +93,7 @@ jobs:
         uses: actions/download-artifact@v3
         with: 
               name: BuildResult
-              path: C-Sharp-master/BuildResult
+              path: C-Sharp-master/BuildResult.zip
         env:
           GITHUB_TOKEN: ${{ github.token }}    
           
@@ -107,7 +107,7 @@ jobs:
           # appname
           appname: "${{ github.repository }}"
           # filepath
-          filepath: "https://github.com/NitikaThingalaya-pki/Testing-for-automation/suites/8679363234/artifacts/391116885"
+          filepath: C-Sharp-master/BuildResult.zip"
           # version
           version: "${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"
           # vid

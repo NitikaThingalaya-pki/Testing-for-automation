@@ -72,6 +72,6 @@ jobs:
         uses: actions/upload-artifact@v3.1.0
         with:
            name: BuildResult.zip
-           path: Debug
+           path: C-Sharp-master\Utilities\bin\Debug\net5.0
            
       

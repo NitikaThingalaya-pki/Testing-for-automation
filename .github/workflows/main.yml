@@ -75,7 +75,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
            name: BuildResult.zip
-           path: C-Sharp-master/BuildResult/BuildResult.zip
+           path: C-Sharp-master/BuildResult
            
       - name: Download a single artifact
         uses: actions/download-artifact@v3

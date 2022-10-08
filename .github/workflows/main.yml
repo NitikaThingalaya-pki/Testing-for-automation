@@ -111,9 +111,9 @@ jobs:
           # version
           version: "${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"
           # vid
-          vid: $vid
+          vid: '${{ secrets.VERACODE_ID }}'
           # vkey
-          vkey: $vkey
+          vkey: '${{ secrets.VERACODE_SECRET }}'
           # true or false
           sandboxname: "Odin2_sandbox"
           # wait X minutes for the scan to complete

@@ -107,7 +107,7 @@ jobs:
           # appname
           appname: "${{ github.repository }}"
           # filepath
-          filepath: C-Sharp-master/BuildResult.zip"
+          filepath: "C-Sharp-master/BuildResult.zip"
           # version
           version: "${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"
           # vid

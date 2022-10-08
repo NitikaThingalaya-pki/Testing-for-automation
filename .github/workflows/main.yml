@@ -73,7 +73,7 @@ jobs:
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with: 
-              name: BuildResult.zip
+              name: BuildResult
               path: C-Sharp-master/BuildResult
         env:
           GITHUB_TOKEN: ${{ github.token }}    

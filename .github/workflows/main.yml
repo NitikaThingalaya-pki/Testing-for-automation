@@ -51,37 +51,20 @@ jobs:
       - name: Build the Solution
         run: msbuild C-Sharp-master\C-Sharp.sln
         
-      - name: Compressing folder
-        id: zip_hash
-        run: |
-          $Parameters = @{
-              Path     = "C-Sharp-master\Utilities\bin\Debug\net5.0"
-              NewName  = "BuildResult"
-              PassThru = $true
-          }
-          $Build_Directory = (Rename-Item @Parameters).FullName
-          $Parameters = @{
-              Path             = $Build_Directory
-              DestinationPath  = "BuildResult.zip"
-              CompressionLevel = "Optimal"
-          }    
-          #Compress-Archive @Parameters
-          #$zip_hash = (Get-FileHash -Path BuildResult.zip -Algorithm SHA256).Hash
-          #Write-Host -Object "BuildResult.zip SHA256 hash: $((Get-FileHash -Path BuildResult.zip -Algorithm SHA256).Hash)"
-          #echo "::set-output name=zip_hash::$zip_hash"
+
           
                     
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v3
         with:
-           name: BuildResult.zip
-           path: C-Sharp-master/BuildResult
+           #name: BuildResult.zip
+           path: C-Sharp-master/BuildResult/BuildResult.zip
            
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with: 
-              name: BuildResult.zip
-              path: C-Sharp-master/BuildResult
+              #name: BuildResult.zip
+              path: C-Sharp-master/BuildResult/BuildResult.zip
         env:
           GITHUB_TOKEN: ${{ github.token }} 
           
@@ -101,8 +84,8 @@ jobs:
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with: 
-              name: BuildResult.zip
-              path: C-Sharp-master/BuildResult
+              #name: BuildResult.zip
+              path: C-Sharp-master/BuildResult/BuildResult.zip
         env:
           GITHUB_TOKEN: ${{ github.token }}    
           

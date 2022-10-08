@@ -113,7 +113,7 @@ jobs:
           # appname
           appname: "${{ github.repository }}"
           # filepath
-          filepath: "/home/runner/work/Testing-for-automation/Testing-for-automation/C-Sharp-master/BuildResult/BuildResult.zip"
+          filepath: "https://github.com/NitikaThingalaya-pki/Testing-for-automation/blob/main/C-Sharp-master/BuildResult/BuildResult.zip"
           # version
           version: "${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"
           # vid

@@ -111,9 +111,9 @@ jobs:
           # version
           version: "${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"
           # vid
-          vid: "${{ secrets.VERACODE_ID }}"
+          vid: "8015e4eaf3d31dbe215941c991ba6a74"
           # vkey
-          vkey: "${{ secrets.VERACODE_SECRET }}"
+          vkey: "c90a74f0538046720c588217069b7399d3b6e6e86bb513061cf689a524ec9ba57060c1f42ad0003a423d892ea68fadcd33e08752c97f3c8b64b69d6764f48665"
           # true or false
           sandboxname: "Odin2_sandbox"
           # wait X minutes for the scan to complete
@@ -124,9 +124,7 @@ jobs:
           deleteincompletescan: false
           # specify version of the Java API Wrapper; default is latest
           #javawrapperversion: "v22.6.10.2"
-        env:
-          vid: ${{ secrets.VERACODE_ID }}
-          vkey: ${{ secrets.VERACODE_SECRET }}
+        
            
            
       

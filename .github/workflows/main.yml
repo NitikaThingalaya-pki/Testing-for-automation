@@ -72,8 +72,7 @@ jobs:
         uses: actions/upload-artifact@v3.1.0
         with:
            name: BuildResult
-           path: BuildResult.zip
-           #path: D:\a\Testing-for-automation\Testing-for-automation\C-Sharp-master\Utilities.Tests\bin
+           path: D:\a\Testing-for-automation\Testing-for-automation\C-Sharp-master\Utilities.Tests\bin
            
 
           
@@ -93,7 +92,7 @@ jobs:
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with: 
-              name: BuildResult.zip
+              name: BuildResult
               path: C-Sharp-master/BuildResult
         env:
           GITHUB_TOKEN: ${{ github.token }}    
@@ -108,7 +107,7 @@ jobs:
           # appname
           appname: "${{ github.repository }}"
           # filepath
-          filepath: "/home/runner/work/Testing-for-automation/Testing-for-automation/C-Sharp-master/BuildResult/BuildResult.zip"
+          filepath: "https://github.com/NitikaThingalaya-pki/Testing-for-automation/suites/8679363234/artifacts/391116885"
           # version
           version: "${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"
           # vid

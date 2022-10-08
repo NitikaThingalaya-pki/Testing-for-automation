@@ -106,6 +106,7 @@ jobs:
         with:
           # appname
           appname: "${{ github.repository }}"
+          createprofile: false
           # filepath
           filepath: "C-Sharp-master/BuildResult.zip"
           # version
@@ -117,7 +118,7 @@ jobs:
           # true or false
           sandboxname: "Odin2_sandbox"
           # wait X minutes for the scan to complete
-          include: "*.dll"
+          #include: "*.dll"
           # teams
           teams: "Diagnostics"
           # automatically delete the current scan if there are any errors when uploading files or starting the scan

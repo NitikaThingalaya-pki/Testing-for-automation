@@ -35,15 +35,13 @@ jobs:
         
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: latest
+        
         
       - name: Setup NuGet.exe for use with actions
         # You may pin to the exact commit or the version.
         # uses: NuGet/setup-nuget@795d81930e6f583d6dbe984a5634efe5de9e54a7
         uses: nuget/setup-nuget@main
-        with:
-          nuget-version: latest
+
         
       - name: Restore NuGet packages
         run: nuget restore C-Sharp-master\C-Sharp.sln

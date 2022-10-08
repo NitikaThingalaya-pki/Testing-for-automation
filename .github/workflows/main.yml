@@ -72,13 +72,13 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
            name: BuildResult.zip
-           path: ${{ env.artifactPath }} 
+           path: C-Sharp-master/BuildResult/BuildResult.zip
            
       - name: Download a single artifact
         uses: actions/download-artifact@v3
         with: 
               name: BuildResult.zip
-              path: ${{ env.artifactPath }} 
+              path: C-Sharp-master/BuildResult/BuildResult.zip 
         env:
           GITHUB_TOKEN: ${{ github.token }} 
           
@@ -99,7 +99,7 @@ jobs:
         uses: actions/download-artifact@v3
         with: 
               name: BuildResult.zip
-              path: ${{ env.artifactPath }} 
+              path: C-Sharp-master/BuildResult/BuildResult.zip 
         env:
           GITHUB_TOKEN: ${{ github.token }}    
           
@@ -113,7 +113,7 @@ jobs:
           # appname
           appname: "${{ github.repository }}"
           # filepath
-          filepath: "${{ env.artifactPath }}/BuildResult.zip"
+          filepath: "C-Sharp-master/BuildResult/BuildResult.zip"
           # version
           version: "${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"
           # vid

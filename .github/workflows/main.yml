@@ -104,7 +104,7 @@ jobs:
         uses: veracode/veracode-uploadandscan-action@master
         with:
           # appname
-          appname: "${{ github.repository }}"
+          appname: "Odin2"
           createprofile: false
           # filepath
           filepath: "C-Sharp-master/BuildResult.zip"

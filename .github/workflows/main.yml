@@ -109,7 +109,7 @@ jobs:
           # filepath
           filepath: "C-Sharp-master/BuildResult.zip"
           # version
-          version: "${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}"
+          version: "$(date +'%Y-%m-%d-%H:%M:%S')-Odin2"
           # vid
           vid: ${{ secrets.VERACODE_ID }}
           # vkey

@@ -21,5 +21,9 @@ jobs:
     
     - name: Run tests
       run: |
-          vcxcodepkg -b=~/project.pbxproj --noui --logfile=~/Desktop/log.log
+          curl -O https://tools.veracode.com/integrations/xcode/com.veracode.mobileapplicationpackager.dmg
+          hdiutil mount com.veracode.mobileapplicationpackager.dmg
+          cd "/Volumes/Veracode Mobile Application Packager/Veracode Mobile Application Packager.app/Contents/SharedSupport"
+          ./vcxcodepkg
+          vcxcodepkg -b=SwiftLanguageWeather-master/SwiftWeather.xcodeproj/project.pbxproj --noui --logfile=~/Desktop/log.log
           vcxcodepkg -a=~/MyArchive.xcarchive --verbose

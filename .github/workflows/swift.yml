@@ -5,9 +5,9 @@ name: Swift
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "test1" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "test1" ]
 
 jobs:
   build:
@@ -18,7 +18,5 @@ jobs:
     
     - name: Run tests
       run: |
-          curl -O https://tools.veracode.com/integrations/xcode/com.veracode.mobileapplicationpackager.dmg
-          hdiutil mount com.veracode.mobileapplicationpackager.dmg
-          cd "/Volumes/Veracode Mobile Application Packager/Veracode Mobile Application Packager.app/Contents/SharedSupport"
-          ./vcxcodepkg
+          vcxcodepkg -b=~/project.pbxproj --noui --logfile=~/Desktop/log.log
+          vcxcodepkg -a=~/MyArchive.xcarchive --verbose
